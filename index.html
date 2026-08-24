@@ -40,11 +40,15 @@ height: 100px;
   <p>Boas vindas ao meu novo blog! Aqui irei compartilhar o trabalho do 
    grupo Sul coreano NEWJEANS</p>
 <button>❤️<span>0</span></button>   </div>
+<button>⭐<span>0</span></button>   </div>
   </main>
 </body>
 <script>
- const botao = document.querySelector("button");
+const botoes = document.querySelectorAll("button");
+ botoes.forEach(function(botao) {
 botao.addEventListener("click", botaoClicado);
+});
+ 
 
  function botaoClicado() {
 let texto = botao.querySelector("span");
