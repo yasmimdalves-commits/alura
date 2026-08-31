@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,28 +21,30 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 24px;
-    
-    /* Configuração para colocar a imagem de um lado e o texto do outro */
     display: flex;
-    align-items: center; /* Alinha o conteúdo verticalmente no centro */
-    gap: 24px; /* Espaço entre a imagem e o texto */
+    align-items: center;
+    gap: 24px;
   }
 
-  /* Estilo da imagem */
   img {
     width: 300px;
     height: 300px;
     object-fit: cover;
-    flex-shrink: 0; /* Impede que a imagem encolha */
+    flex-shrink: 0;
   }
 
-  /* Container para os textos alinhados à direita da imagem */
   .conteudo-texto {
-    text-align: left; /* Alinha o texto para a esquerda para melhor leitura */
+    text-align: left;
   }
 
   .botoes-container {
     margin-top: 16px;
+  }
+
+  button {
+    cursor: pointer;
+    padding: 8px 12px;
+    font-size: 16px;
   }
 </style>
 </head>
@@ -70,19 +73,12 @@
     const botoes = document.querySelectorAll("button");
 
     botoes.forEach(function (botao) {
-      let curtiu = false;
-
       botao.addEventListener("click", function () {
         let spanTexto = botao.querySelector("span");
         let valorAtual = parseInt(spanTexto.textContent);
 
-        if (!curtiu) {
-          spanTexto.textContent = valorAtual + 1;
-          curtiu = true;
-        } else {
-          spanTexto.textContent = valorAtual - 1;
-          curtiu = false;
-        }
+        // Soma +1 a cada clique sem restrições
+        spanTexto.textContent = valorAtual + 1;
       });
     });
   </script>
