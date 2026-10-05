@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog</title>
 <style>
+  /* --- Tema Claro (Padrão) --- */
+  body {
+    background-color: #f4f4f4;
+    color: #1c1c1c;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
   header {
     background-color: #EEA2AD;
     color: #1C1C1C;
@@ -13,6 +23,8 @@
     margin: 0 auto 20px auto;
     border: 5px solid #9AC0CD;
     padding: 16px;
+    position: relative;
+    border-radius: 8px;
   }
 
   main {
@@ -31,6 +43,8 @@
     display: flex;
     align-items: center;
     gap: 24px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
   }
 
   img {
@@ -38,6 +52,7 @@
     height: 300px;
     object-fit: cover;
     flex-shrink: 0;
+    border-radius: 8px;
   }
 
   .conteudo-texto {
@@ -52,6 +67,48 @@
     cursor: pointer;
     padding: 8px 12px;
     font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+  }
+
+  /* Botão de alternar tema no topo */
+  .btn-tema {
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+  }
+
+  /* --- Tema Escuro (Dark Mode) --- */
+  body.dark-mode {
+    background-color: #121212;
+    color: #E0E0E0;
+  }
+
+  body.dark-mode header {
+    background-color: #2D1B2D;
+    color: #F8C8DC;
+    border-color: #4A6572;
+  }
+
+  body.dark-mode .post {
+    background-color: #3A2232;
+    color: #FFB6C1;
+  }
+
+  body.dark-mode button {
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    border-color: #555;
+  }
+
+  body.dark-mode .btn-tema {
+    background-color: #FFB6C1;
+    color: #1C1C1C;
   }
 </style>
 </head>
@@ -59,10 +116,13 @@
   <header>
     <h1>Minha página sobre o grupo sul-coreano - NEWJEANS</h1>
     <p>Aqui vou compartilhar seu trabalho, curiosidades e divulgação sobre elas.</p>
+    
+    <!-- Botão de alterar o tema -->
+    <button id="btn-tema" class="btn-tema" type="button">🌙 Modo Escuro</button>
   </header>
 
   <main>
-<article class="post">
+    <article class="post">
       <img src="newjeans.png" alt="Logo em estética Y2K com o nome New Jeans em letras arredondadas rosa e azul dentro de uma bolha holográfica, sobre um fundo rosa claro">
       
       <div class="conteudo-texto">
@@ -71,23 +131,23 @@
         <p>Boas-vindas ao meu novo blog! Aqui irei compartilhar o trabalho do grupo sul-coreano NEWJEANS.</p>
         
         <div class="botoes-container">
-          <button type="button">❤️ <span>0</span></button>  
-          <button type="button">⭐ <span>0</span></button>   
+          <button class="btn-interacao" type="button">❤️ <span>0</span></button>  
+          <button class="btn-interacao" type="button">⭐ <span>0</span></button>   
         </div>
       </div>
     </article>
- 
+
     <article class="post">
       <img src="newjeans.png" alt="Logo em estética Y2K com o nome New Jeans em letras arredondadas rosa e azul dentro de uma bolha holográfica, sobre um fundo rosa claro">
       
       <div class="conteudo-texto">
         <h2>Quem são?</h2>
         <p>Por Yasmin Rafaelle</p>
-        <p>NewJeans é um grupo de K-pop sul-coreano formado em 2022 pela ADOR, uma subsidiária da Hybe Corporation. O grupo é composto por cinco integrantes: Minji, Hanni, Danielle, Haerin e Hyein. No dia 22 de julho de 2022, o grupo lançou seu single de estreia, “Attention”, que foi seguido pelo EP “New Jeans” em 1º de agosto de 2022.</p>
+        <p>NewJeans é um grupo de K-pop sul-coreano formado em 2022 pela ADOR, uma subsidiária da Hybe Corporation. O grupo é composto por cinco integrantes: Minji, Hanni, Danielle, Haerin e Hyein. No dia 22 de julho de 2022, o grupo lançou seu single de estreia, “Attention”, que foi seguido pelo EP “New Jeans” em 1º de agosto de 2022.</p>
         
         <div class="botoes-container">
-          <button type="button">❤️ <span>0</span></button>  
-          <button type="button">⭐ <span>0</span></button>   
+          <button class="btn-interacao" type="button">❤️ <span>0</span></button>  
+          <button class="btn-interacao" type="button">⭐ <span>0</span></button>   
         </div>
       </div>
     </article>
@@ -101,8 +161,8 @@
         <p>A crise envolvendo o NewJeans começou devido a uma longa disputa contratual entre as integrantes do grupo e a empresa responsável pela gestão delas (a agência ADOR e sua controladora, HYBE). As integrantes buscaram rescindir seus contratos alegando quebra de confiança e problemas na gestão da empresa. O caso foi levado aos tribunais sul-coreanos, resultando no congelamento temporário das atividades do grupo.</p>
         
         <div class="botoes-container">
-          <button type="button">❤️ <span>0</span></button>  
-          <button type="button">⭐ <span>0</span></button>   
+          <button class="btn-interacao" type="button">❤️ <span>0</span></button>  
+          <button class="btn-interacao" type="button">⭐ <span>0</span></button>   
         </div>
       </div>
     </article>
@@ -116,8 +176,8 @@
         <p>No final de dezembro de 2025, a agência ADOR anunciou oficialmente o encerramento do contrato com a integrante Danielle, citando que não era mais viável manter a parceria profissional. A remoção de Danielle transformou o NewJeans em um grupo de quatro integrantes.</p>
         
         <div class="botoes-container">
-          <button type="button">❤️ <span>0</span></button>  
-          <button type="button">⭐ <span>0</span></button>   
+          <button class="btn-interacao" type="button">❤️ <span>0</span></button>  
+          <button class="btn-interacao" type="button">⭐ <span>0</span></button>   
         </div>
       </div>
     </article>
@@ -131,23 +191,39 @@
         <p>Não, o NewJeans não deu disband. O tribunal decidiu a favor da agência, o que levou as outras integrantes a negociarem seus retornos à empresa. Apesar das incertezas, de uma pausa prolongada nas carreiras e das mudanças na formação original, o grupo permanece ativo sob o selo da agência. Há alguns boatos também que a ajuda do tribunal pode rever sobre a saída da Danielle e uma possível volta de Danielle no grupo.</p>
         
         <div class="botoes-container">
-          <button type="button">❤️ <span>0</span></button>  
-          <button type="button">⭐ <span>0</span></button>   
+          <button class="btn-interacao" type="button">❤️ <span>0</span></button>  
+          <button class="btn-interacao" type="button">⭐ <span>0</span></button>   
         </div>
       </div>
     </article>
   </main>
 
   <script>
-    const botoes = document.querySelectorAll("button");
+    // Lógica do contador de curtidas/favoritos
+    const botoesInteracao = document.querySelectorAll(".btn-interacao");
 
-    botoes.forEach(function (botao) {
+    botoesInteracao.forEach(function (botao) {
       botao.addEventListener("click", function () {
         let spanTexto = botao.querySelector("span");
         let valorAtual = parseInt(spanTexto.textContent);
 
         spanTexto.textContent = valorAtual + 1;
       });
+    });
+
+    // Lógica da alternância entre Modo Claro e Escuro
+    const btnTema = document.getElementById("btn-tema");
+
+    btnTema.addEventListener("click", function () {
+      // Alterna a classe 'dark-mode' no <body>
+      document.body.classList.toggle("dark-mode");
+
+      // Atualiza o texto do botão de acordo com o modo atual
+      if (document.body.classList.contains("dark-mode")) {
+        btnTema.textContent = "☀️ Modo Claro";
+      } else {
+        btnTema.textContent = "🌙 Modo Escuro";
+      }
     });
   </script>
 </body>
